@@ -18,14 +18,7 @@
         try {
             await window.experiment.fetch();
             console.log('✅ Experiment variants fetched successfully');
-            
-            // Debug: Check what variant the user got
-            const currentVariant = window.experiment.variant('test-feature-experiment');
-            console.log('🔍 User assigned to variant:', currentVariant.value);
-            
-            // Test automatic enrichment with a simple event
-            amplitude.track('Test Event', { testProperty: 'test value' });
-            console.log('🧪 Test event sent to check automatic enrichment');
+
         } catch (error) {
             console.error('❌ Failed to fetch experiment variants:', error);
         }
