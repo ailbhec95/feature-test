@@ -114,7 +114,10 @@ function login(name, userId, password) {
         userObj.set('loginMethod', 'form');
         
         // Send identify call
-        amplitude.track('User Logged In', userObj);
+        amplitude.identify(userObj);
+        
+        // Send track call
+        amplitude.track('User Logged In');
         
         console.log('Amplitude identify call sent for user login:', userId.trim());
     }
